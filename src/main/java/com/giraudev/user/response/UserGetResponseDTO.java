@@ -1,4 +1,4 @@
-package com.giraudev.user;
+package com.giraudev.user.response;
 
 public class UserGetResponseDTO {
     private Long id;

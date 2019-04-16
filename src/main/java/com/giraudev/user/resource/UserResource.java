@@ -1,5 +1,10 @@
-package com.giraudev.user;
+package com.giraudev.user.resource;
 
+import com.giraudev.user.service.UserService;
+import com.giraudev.user.domain.User;
+import com.giraudev.user.request.UserPostRequestDTO;
+import com.giraudev.user.response.UserGetResponseDTO;
+import com.giraudev.user.response.UserPostResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

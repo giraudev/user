@@ -1,5 +1,10 @@
-package com.giraudev.user;
+package com.giraudev.user.service;
 
+import com.giraudev.user.converter.UserConverter;
+import com.giraudev.user.domain.User;
+import com.giraudev.user.repository.UserRepository;
+import com.giraudev.user.request.UserPostRequestDTO;
+import com.giraudev.user.response.UserGetResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

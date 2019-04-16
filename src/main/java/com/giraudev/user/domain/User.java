@@ -1,4 +1,4 @@
-package com.giraudev.user;
+package com.giraudev.user.domain;
 
 import javax.persistence.*;
 

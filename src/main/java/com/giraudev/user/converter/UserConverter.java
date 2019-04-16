@@ -1,5 +1,8 @@
-package com.giraudev.user;
+package com.giraudev.user.converter;
 
+import com.giraudev.user.domain.User;
+import com.giraudev.user.request.UserPostRequestDTO;
+import com.giraudev.user.response.UserGetResponseDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
