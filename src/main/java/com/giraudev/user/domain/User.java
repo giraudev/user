@@ -1,6 +1,7 @@
 package com.giraudev.user.domain;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Table(name = "USER")
@@ -46,7 +47,18 @@ public class User {
     }
 
     public void setActive(Boolean active) {
-        this.active = active;
+        if(!this.active.equals(active)){
+            this.active = active;}
+    }
+
+    public void update(String name, String cpf, String birthDate, String address, String phones, String email) {
+        Optional.ofNullable(name).ifPresent(newName -> this.name = newName);
+        Optional.ofNullable(cpf).ifPresent(newCpf -> this.cpf = newCpf);
+        Optional.ofNullable(birthDate).ifPresent(newBirthDate -> this.birthDate = newBirthDate);
+        Optional.ofNullable(address).ifPresent(newAddress -> this.address = newAddress);
+        Optional.ofNullable(phones).ifPresent(newPhones -> this.phones = newPhones);
+        Optional.ofNullable(email).ifPresent(newEmail -> this.email = newEmail);
+
     }
 
     public Long getId() {

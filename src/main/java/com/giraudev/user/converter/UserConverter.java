@@ -23,11 +23,11 @@ public class UserConverter {
 
     public List<UserGetResponseDTO> toListDTO(List<User> dto){
         return dto.stream().map(x -> new UserGetResponseDTO(x.getId(), x.getName(), x.getCpf(), x.getBirthDate(), x.getAddress(),
-                x.getPhones(), x.getEmail())).collect(Collectors.toList());
+                x.getPhones(), x.getEmail(), x.getActive())).collect(Collectors.toList());
     }
 
     public UserGetResponseDTO toGetDTO(User dto){
         return new UserGetResponseDTO(dto.getId(), dto.getName(), dto.getCpf(), dto.getBirthDate(), dto.getAddress(),
-                dto.getPhones(), dto.getEmail());
+                dto.getPhones(), dto.getEmail(), dto.getActive());
     }
 }

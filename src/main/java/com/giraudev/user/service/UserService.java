@@ -3,10 +3,12 @@ package com.giraudev.user.service;
 import com.giraudev.user.converter.UserConverter;
 import com.giraudev.user.domain.User;
 import com.giraudev.user.repository.UserRepository;
+import com.giraudev.user.request.UserPatchRequestDTO;
 import com.giraudev.user.request.UserPostRequestDTO;
 import com.giraudev.user.response.UserGetResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -44,6 +46,18 @@ public class UserService {
     public UserGetResponseDTO get(Long id){
         Optional<User> user = repository.findById(id);
         return converter.toGetDTO(user.get());
+    }
+
+
+    @Transactional
+    public void patch(UserPatchRequestDTO requestDTO) {
+        User user = this.findUser(requestDTO);
+        user.update(requestDTO.getNome(), requestDTO.getCpf(), requestDTO.getDataNascimento(), requestDTO.getEndereco(), requestDTO.getTelefone(), requestDTO.getEmail());
+        repository.save(user);
+    }
+
+    private User findUser(UserPatchRequestDTO requestDTO){
+        return repository.findByNameAndCpf(requestDTO.getNome(), requestDTO.getCpf()).orElse(null);
     }
 
 

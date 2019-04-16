@@ -1,5 +1,6 @@
 package com.giraudev.user.resource;
 
+import com.giraudev.user.request.UserPatchRequestDTO;
 import com.giraudev.user.service.UserService;
 import com.giraudev.user.domain.User;
 import com.giraudev.user.request.UserPostRequestDTO;
@@ -40,11 +41,11 @@ public class UserResource {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-//    @PatchMapping(path = "/")
-//    public ResponseEntity<Void> patch(@RequestBody UserPatchRequestDTO requestDTO) {
-//        userService.patch(requestDTO);
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
+    @PatchMapping(path = "/")
+    public ResponseEntity<Void> patch(@RequestBody UserPatchRequestDTO requestDTO) {
+        userService.patch(requestDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 
     @PutMapping(path = "/user/{userId}")

@@ -1,28 +1,21 @@
-package com.giraudev.user.response;
+package com.giraudev.user.request;
 
-public class UserGetResponseDTO {
-    private Long id;
+public class UserPatchRequestDTO {
+
     private String nome;
     private String cpf;
     private String dataNascimento;
     private String endereco;
     private String telefone;
     private String email;
-    private Boolean active;
 
-    public UserGetResponseDTO(Long id, String nome, String cpf, String dataNascimento, String endereco, String telefone, String email, Boolean active) {
-        this.id = id;
+    public UserPatchRequestDTO(String nome, String cpf, String dataNascimento, String endereco, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
-        this.active = active;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getNome() {
@@ -48,8 +41,5 @@ public class UserGetResponseDTO {
     public String getEmail() {
         return email;
     }
-
-    public Boolean getActive() {
-        return active;
-    }
 }
+
